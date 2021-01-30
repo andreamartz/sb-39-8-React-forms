@@ -1,3 +1,9 @@
+/**
+ * App component:
+ * 
+ * * renders the BoxList component
+ */
+
 import React from "react";
 import BoxList from "./BoxList";
 import './App.css';
