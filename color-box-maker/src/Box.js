@@ -6,10 +6,21 @@
 
 import React from "react";
 
-const Box = () => {
-
-
-
+const Box = ({ id, key, width, height, backgroundColor, removeBox }) => {
+  const handleRemove = () => removeBox(id);
+  return (
+    <div>
+      <div
+        style={{
+          display: "inline-block",
+          width: `${width}px`,
+          height: `${height}px`,
+          backgroundColor
+        }}>
+      </div>
+      <button onClick={handleRemove}>X</button>
+    </div>
+  )
 }
 
 export default Box;

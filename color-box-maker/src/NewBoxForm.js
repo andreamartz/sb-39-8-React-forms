@@ -9,29 +9,30 @@ import React, { useState } from "react";
 
 
 const NewBoxForm = ({ addBox }) => {
-  const initialState = {
-    width: "150",
-    height: "150",
-    backgroundColor: "pink"
-  }
-  const [formData, setFormData] = useState(initialState);
+  const INITIAL_STATE = {
+    width: '',
+    height: '',
+    backgroundColor: ''
+  };
+  const [formData, setFormData] = useState(INITIAL_STATE);
 
   // handleChange will handle changes to form input fields
   const handleChange = (evt) => {
-    const { name, value } = evt.target;
-    console.log("EVT: ", evt, "EVT TARGET: ", typeof evt.target, evt.target);
+    const { name, value } = evt.target;  // name and value come from the target input
     
     setFormData(data => ({
-      ...data,
-      [name]: value
+      ...data,         // use spread operator to insert the formData we currently have
+      [name]: value    // in the current formData, change only the value corresponding to the computed value of name
     }));
   }
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const { width, height, backgroundColor } = formData;
+    // add the new box to state
+    addBox({ ...formData });
     console.log(`Created box with ${width}px width, ${height}px height, and background color ${backgroundColor}`)
-    setFormData(initialState);
+    setFormData(INITIAL_STATE);
   }
 
   return (
