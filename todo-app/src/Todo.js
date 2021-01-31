@@ -10,7 +10,7 @@ const Todo = ({ id, task, removeTodo }) => {
     removeTodo(id);
   }
   return (
-    <li id={`${id}`}>{task} <span onClick={handleRemove}> X </span></li>
+    <li id={`${id}`}>{task}<span onClick={handleRemove}> X </span></li>
   )
 }
 

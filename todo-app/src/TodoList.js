@@ -14,10 +14,7 @@ import Todo from "./Todo";
 const TodoList = () => {
   // create variable to hold initial/reset values for TodoList
   // todos is an array of task objects
-  const INITIAL_STATE = [
-    {id: uuid(), task: 'Wash cats'},
-    {id: uuid(), task: 'Feed cats'}
-  ];
+  const INITIAL_STATE = [];
   const [todos, setTodos] = useState(INITIAL_STATE);
 
   // create fcn for adding a todo; pass this as prop to NewTodoForm
