@@ -1,16 +1,16 @@
 import React from "react";
 import { render } from '@testing-library/react';
-import App from './App';
+import Box from './Box';
 
 describe("Smoke tests", () => {
   test('renders without crashing', () => {
-    render(<App />);
+    render(<Box />);
   });
 });
 
 describe("Snapshot tests", () => {
   test('matches snapshot', () => {
-    const {asFragment} = render(<App />);
+    const {asFragment} = render(<Box />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

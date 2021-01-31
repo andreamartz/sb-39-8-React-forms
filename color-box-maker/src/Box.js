@@ -16,9 +16,11 @@ const Box = ({ id, key, width, height, backgroundColor, removeBox }) => {
           width: `${width}px`,
           height: `${height}px`,
           backgroundColor
-        }}>
+        }}
+        aria-label={`${backgroundColor} box`}
+      >
       </div>
-      <button onClick={handleRemove}>X</button>
+      <button aria-label='Remove box' onClick={handleRemove}>X</button>
     </div>
   )
 }
